@@ -4,7 +4,7 @@ import Preview from "./Preview";
 
 const FormContainer = () => {
     return (
-        <form>
+        <form id="editor-preview-container">
             <Editor />
             <Preview />
         </form>

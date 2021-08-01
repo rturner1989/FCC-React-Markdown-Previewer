@@ -2,8 +2,8 @@ import React from "react";
 
 const AppHeader = () => {
     return (
-        <div>
-            <h1>hello world</h1>
+        <div className="header">
+            <h1 className="header-text">Markdown Previewer</h1>
         </div>
     );
 };

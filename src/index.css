@@ -1,0 +1,55 @@
+#root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    text-align: center;
+}
+
+#editor-preview-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+#editor,
+#preview {
+    height: 80vh;
+    width: 47vw;
+    overflow: scroll;
+    padding: 0;
+    margin: 0;
+}
+#editor {
+    resize: none;
+}
+
+#editor-navbar,
+#preview-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: black 1px solid;
+}
+
+#btn-container {
+    height: 100%;
+}
+
+#preview {
+    border: black solid 1px;
+}
+#preview img {
+    display: block;
+    max-width: 30vw;
+}
