@@ -24,10 +24,12 @@ const AppProvider = ({ children }) => {
     }, [editorText]);
 
     const updatePreviewText = () => {
-        // marked.setOptions({ break: false });
+        marked.setOptions({ breaks: true });
         const importMarked = marked(editorText);
-        const purified = DOMPurify.sanitize(importMarked);
-        setPreviewMarkdown(purified);
+        const clean = DOMPurify.sanitize(importMarked, {
+            USE_PROFILES: { html: true },
+        });
+        setPreviewMarkdown(clean);
     };
 
     return (

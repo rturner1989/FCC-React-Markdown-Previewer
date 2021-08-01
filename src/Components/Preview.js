@@ -6,9 +6,10 @@ const Preview = () => {
 
     return (
         <section>
-            <label htmlFor="preview">
-                <textarea name="preview" id="preview" value={previewMarkdown} />
-            </label>
+            <div
+                id="preview"
+                dangerouslySetInnerHTML={{ __html: previewMarkdown }}
+            />
         </section>
     );
 };
