@@ -1,8 +1,14 @@
 import React from "react";
-import "./App.css";
+import AppHeader from "./Components/AppHeader";
+import FormContainer from "./Components/FormContainer";
 
 function App() {
-    return <div className="App"></div>;
+    return (
+        <main className="App">
+            <AppHeader />
+            <FormContainer />
+        </main>
+    );
 }
 
 export default App;
