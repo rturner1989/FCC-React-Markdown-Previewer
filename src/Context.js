@@ -9,6 +9,8 @@ const AppProvider = ({ children }) => {
     const [editorText, setEditorText] = useState("");
     const [previewMarkdown, setPreviewMarkdown] = useState("");
 
+    const resizeWindow = () => {};
+
     const fetchInitialText = async () => {
         const response = await fetch(initialText);
         const data = await response.text();

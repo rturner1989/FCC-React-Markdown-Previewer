@@ -1,33 +1,53 @@
-#root {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.app {
+.App {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header {
-    text-align: center;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #editor-preview-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 90%;
+}
+
+.markdown-editor,
+.markdown-previewer {
+    padding: 10px 10px;
 }
 
 #editor,
 #preview {
     height: 80vh;
     width: 47vw;
+    max-width: 750px;
     overflow: scroll;
-    padding: 0;
-    margin: 0;
+    overflow-x: hidden;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+}
+@media (max-width: 600px) {
+    #editor,
+    #preview {
+        overflow-x: visible;
+    }
 }
 #editor {
     resize: none;
@@ -51,5 +71,5 @@
 }
 #preview img {
     display: block;
-    max-width: 30vw;
+    max-width: 20vw;
 }
