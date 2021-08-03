@@ -6,15 +6,42 @@ import initialText from "./Markdown/Data.md";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
+    const windowState = { EDITOR: "EDITOR", PREVIEW: "PREVIEW", NONE: "NONE" };
     const [editorText, setEditorText] = useState("");
     const [previewMarkdown, setPreviewMarkdown] = useState("");
-
-    const resizeWindow = () => {};
+    const [windowFullscreen, setWindowFullscreen] = useState(windowState.NONE);
 
     const fetchInitialText = async () => {
         const response = await fetch(initialText);
         const data = await response.text();
         setEditorText(data);
+    };
+
+    const maximiseEditor = () => {
+        switch (windowFullscreen) {
+            case windowState.EDITOR:
+                setWindowFullscreen(windowState.NONE);
+                break;
+            case windowState.PREVIEW:
+                setWindowFullscreen(windowState.EDITOR);
+                break;
+            case windowState.NONE:
+                setWindowFullscreen(windowState.EDITOR);
+                break;
+        }
+    };
+    const maximisePreview = () => {
+        switch (windowFullscreen) {
+            case windowState.EDITOR:
+                setWindowFullscreen(windowState.PREVIEW);
+                break;
+            case windowState.PREVIEW:
+                setWindowFullscreen(windowState.NONE);
+                break;
+            case windowState.NONE:
+                setWindowFullscreen(windowState.PREVIEW);
+                break;
+        }
     };
 
     useEffect(() => {
@@ -37,11 +64,16 @@ const AppProvider = ({ children }) => {
     return (
         <AppContext.Provider
             value={{
+                windowState,
                 editorText,
                 previewMarkdown,
+                windowFullscreen,
                 setEditorText,
                 setPreviewMarkdown,
                 updatePreviewText,
+                setWindowFullscreen,
+                maximiseEditor,
+                maximisePreview,
             }}
         >
             {children}

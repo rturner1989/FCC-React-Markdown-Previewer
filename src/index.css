@@ -24,31 +24,31 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 80%;
+    width: 75vw;
     height: 90%;
 }
 
 .markdown-editor,
 .markdown-previewer {
     padding: 10px 10px;
+    width: 40%;
+}
+.window-max {
+    width: 100%;
+}
+.window-hidden {
+    display: none;
 }
 
 #editor,
 #preview {
     height: 80vh;
-    width: 47vw;
-    max-width: 750px;
+    width: 100%;
     overflow: scroll;
-    overflow-x: hidden;
     padding: 10px 10px;
     font-size: 1.2rem;
 }
-@media (max-width: 600px) {
-    #editor,
-    #preview {
-        overflow-x: visible;
-    }
-}
+
 #editor {
     resize: none;
 }
