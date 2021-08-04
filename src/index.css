@@ -25,6 +25,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    overflow-x: hidden;
+
     width: 75vw;
     height: 90%;
 }
@@ -33,12 +35,19 @@
 .markdown-previewer {
     padding: 10px 10px;
     width: 50%;
+    transition: ease-in 0.4s;
 }
+/* .markdown-previewer {
+    text-align: center;
+} */
+
 .window-max {
     width: 100%;
 }
 .window-hidden {
-    display: none;
+    transform: translate(1px);
+    width: 0%;
+    opacity: 0;
 }
 
 #editor,
@@ -46,6 +55,7 @@
     height: 80vh;
     width: 100%;
     overflow: scroll;
+    white-space: pre;
     padding: 10px 10px;
 }
 
