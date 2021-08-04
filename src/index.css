@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Share Tech Mono", monospace;
 }
 
 .App {
@@ -23,7 +24,7 @@
 #editor-preview-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 75vw;
     height: 90%;
 }
@@ -31,7 +32,7 @@
 .markdown-editor,
 .markdown-previewer {
     padding: 10px 10px;
-    width: 40%;
+    width: 50%;
 }
 .window-max {
     width: 100%;
@@ -46,7 +47,6 @@
     width: 100%;
     overflow: scroll;
     padding: 10px 10px;
-    font-size: 1.2rem;
 }
 
 #editor {
@@ -60,10 +60,47 @@
     align-items: center;
     justify-content: space-between;
     border: black 1px solid;
+    width: 100%;
+    height: 50px;
+    padding: 10px 10px;
+}
+.btn-container {
+    max-height: 32px;
 }
 
-#btn-container {
-    height: 100%;
+.clear,
+.contract,
+.expand {
+    font-size: 2rem;
+    border: none;
+    background: none;
+    height: 32px;
+    width: 32px;
+}
+.clear {
+    cursor: -moz-pointer;
+    cursor: -webkit-pointer;
+    cursor: pointer;
+}
+.expand {
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+}
+.contract {
+    cursor: -moz-zoom-out;
+    cursor: -webkit-zoom-out;
+    cursor: zoom-out;
+}
+
+.label-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
 }
 
 #preview {

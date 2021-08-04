@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useGlobalContext } from "../Context";
+import { GiExpand, GiContract } from "react-icons/gi";
 
 const Preview = () => {
     const { previewMarkdown, maximisePreview, windowState, windowFullscreen } =
@@ -28,7 +29,17 @@ const Preview = () => {
         <section className="markdown-previewer" ref={previewRef}>
             <div id="preview-navbar">
                 <h1>Preview</h1>
-                <button onClick={maximisePreview}>Resize</button>
+                {windowFullscreen === windowState.PREVIEW ? (
+                    <button className="contract" onClick={maximisePreview}>
+                        <span className="label-hidden">Contract</span>
+                        <GiContract aria-hidden={true} focusable={false} />
+                    </button>
+                ) : (
+                    <button className="expand" onClick={maximisePreview}>
+                        <span className="label-hidden">Expand</span>
+                        <GiExpand aria-hidden={true} focusable={false} />
+                    </button>
+                )}
             </div>
             <div
                 id="preview"

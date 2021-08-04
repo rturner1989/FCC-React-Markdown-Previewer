@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useGlobalContext } from "../Context";
+import { GiExpand, GiContract } from "react-icons/gi";
+import { GoTrashcan } from "react-icons/go";
 
 const Editor = () => {
     const {
@@ -36,10 +38,26 @@ const Editor = () => {
             <div id="editor-navbar">
                 <h1>Editor</h1>
                 <div className="btn-container">
-                    <button onClick={placeholder}>Clear</button>
-                    <button onClick={maximiseEditor}>Resize</button>
+                    <button className="clear" onClick={placeholder}>
+                        <span className="label-hidden">Clear</span>
+                        <GoTrashcan aria-hidden={true} focusable={false} />
+                    </button>
+                    {windowFullscreen === windowState.EDITOR ? (
+                        <button className="contract" onClick={maximiseEditor}>
+                            <span className="label-hidden">Contract</span>
+                            <GiContract aria-hidden={true} focusable={false} />
+                        </button>
+                    ) : (
+                        <button className="expand" onClick={maximiseEditor}>
+                            <span className="label-hidden">Expand</span>
+                            <GiExpand aria-hidden={true} focusable={false} />
+                        </button>
+                    )}
                 </div>
             </div>
+            <label htmlFor="editor" className="label-hidden">
+                Markdown Editor
+            </label>
             <textarea
                 placeholder={editorPlaceHolder}
                 name="editor"
