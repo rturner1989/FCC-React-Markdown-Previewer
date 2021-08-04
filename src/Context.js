@@ -10,11 +10,17 @@ const AppProvider = ({ children }) => {
     const [editorText, setEditorText] = useState("");
     const [previewMarkdown, setPreviewMarkdown] = useState("");
     const [windowFullscreen, setWindowFullscreen] = useState(windowState.NONE);
+    const [editorPlaceHolder, setEditorPlaceHolder] = useState("");
 
     const fetchInitialText = async () => {
         const response = await fetch(initialText);
         const data = await response.text();
         setEditorText(data);
+    };
+
+    const placeholder = () => {
+        setEditorPlaceHolder(editorText);
+        setEditorText("");
     };
 
     const maximiseEditor = () => {
@@ -68,12 +74,14 @@ const AppProvider = ({ children }) => {
                 editorText,
                 previewMarkdown,
                 windowFullscreen,
+                editorPlaceHolder,
                 setEditorText,
                 setPreviewMarkdown,
                 updatePreviewText,
                 setWindowFullscreen,
                 maximiseEditor,
                 maximisePreview,
+                placeholder,
             }}
         >
             {children}

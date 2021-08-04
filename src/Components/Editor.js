@@ -2,8 +2,15 @@ import React, { useEffect, useRef } from "react";
 import { useGlobalContext } from "../Context";
 
 const Editor = () => {
-    const { editorText, maximiseEditor, windowState, windowFullscreen } =
-        useGlobalContext();
+    const {
+        editorText,
+        maximiseEditor,
+        windowState,
+        windowFullscreen,
+        placeholder,
+        editorPlaceHolder,
+        setEditorText,
+    } = useGlobalContext();
 
     const editorRef = useRef(null);
 
@@ -29,15 +36,17 @@ const Editor = () => {
             <div id="editor-navbar">
                 <h1>Editor</h1>
                 <div className="btn-container">
-                    <button>Clear</button>
+                    <button onClick={placeholder}>Clear</button>
                     <button onClick={maximiseEditor}>Resize</button>
                 </div>
             </div>
             <textarea
+                placeholder={editorPlaceHolder}
                 name="editor"
                 id="editor"
                 autoFocus={true}
                 value={editorText}
+                onChange={(e) => setEditorText(e.target.value)}
             />
         </section>
     );
