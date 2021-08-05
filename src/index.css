@@ -58,6 +58,7 @@
     white-space: pre;
     overflow-x: visible;
 }
+
 #preview {
     border: black solid 1px;
 }
@@ -133,6 +134,15 @@
     margin: 1rem 0;
 }
 
+#preview a {
+    color: #1e1e1e;
+    font-weight: 800;
+}
+#preview a {
+    color: #1e1e1e;
+    font-weight: 800;
+}
+
 #editor-navbar,
 #preview-navbar {
     display: flex;
@@ -143,6 +153,13 @@
     width: 100%;
     height: 50px;
     padding: 10px 10px;
+    background: rgb(30, 30, 30);
+    background: linear-gradient(
+        90deg,
+        rgba(30, 30, 30, 1) 0%,
+        rgba(75, 75, 75, 1) 100%
+    );
+    color: white;
 }
 .btn-container {
     max-height: 32px;
@@ -152,6 +169,7 @@
 .contract,
 .expand {
     font-size: 2rem;
+    color: white;
     border: none;
     background: none;
     height: 32px;
@@ -182,7 +200,7 @@
     position: absolute;
     white-space: nowrap;
 }
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
     .App {
         width: 100vw;
         height: 100vh;
@@ -208,7 +226,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     #editor-preview-container {
         width: 100vw;
         height: 100vh;
