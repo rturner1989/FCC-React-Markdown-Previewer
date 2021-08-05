@@ -26,7 +26,6 @@
     flex-direction: row;
     justify-content: center;
     overflow-x: hidden;
-
     width: 75vw;
     height: 90%;
 }
@@ -37,10 +36,6 @@
     width: 50%;
     transition: ease-in 0.4s;
 }
-/* .markdown-previewer {
-    text-align: center;
-} */
-
 .window-max {
     width: 100%;
 }
@@ -55,12 +50,87 @@
     height: 80vh;
     width: 100%;
     overflow: scroll;
-    white-space: pre;
-    padding: 10px 10px;
+    overflow-x: hidden;
+    padding: 1rem;
 }
-
 #editor {
     resize: none;
+    white-space: pre;
+    overflow-x: visible;
+}
+#preview {
+    border: black solid 1px;
+}
+
+#preview h1 {
+    margin-bottom: 1.2rem;
+}
+
+#preview h2 {
+    margin-bottom: 1rem;
+}
+
+#preview h3 {
+    margin-bottom: 0.8rem;
+}
+
+#preview h4,
+#preview h5,
+#preview h6 {
+    margin-bottom: 0.6rem;
+}
+
+#preview p {
+    margin: 1rem 0;
+}
+
+#preview pre {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    background: #1e1e1e;
+    padding: 0.5rem;
+    color: rgb(255, 255, 255);
+    max-width: fit-content;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+#preview blockquote {
+    font-weight: 800;
+}
+
+#preview table {
+    margin: 1.4rem 0;
+    border: black 2px solid;
+    max-width: fit-content;
+}
+
+#preview table td,
+#preview table th {
+    padding: 0.2rem;
+    border: black 1px solid;
+}
+
+#preview table th {
+    background-color: #1e1e1e;
+    color: rgb(255, 255, 255);
+}
+#preview table td {
+    background-color: lightgrey;
+}
+
+#preview img {
+    display: block;
+    max-width: 70%;
+}
+
+#preview ul {
+    padding-left: 1rem;
+}
+
+#preview ol {
+    padding-left: 1rem;
+    margin: 1rem 0;
 }
 
 #editor-navbar,
@@ -112,11 +182,35 @@
     position: absolute;
     white-space: nowrap;
 }
-
-#preview {
-    border: black solid 1px;
+@media (max-width: 500px) {
+    .App {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #editor-preview-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+    }
+    .markdown-editor {
+        width: 100%;
+    }
+    .markdown-previewer {
+        width: 100%;
+    }
+    .contract,
+    .expand {
+        display: none;
+    }
 }
-#preview img {
-    display: block;
-    max-width: 20vw;
+
+@media (max-width: 1000px) {
+    #editor-preview-container {
+        width: 100vw;
+        height: 100vh;
+    }
 }
