@@ -36,7 +36,7 @@ const Editor = () => {
     return (
         <section className="markdown-editor" ref={editorRef}>
             <div id="editor-navbar">
-                <h1>Editor</h1>
+                <h1 id="editor-header">Editor</h1>
                 <div className="btn-container">
                     <button className="clear" onClick={placeholder}>
                         <span className="label-hidden">Clear</span>

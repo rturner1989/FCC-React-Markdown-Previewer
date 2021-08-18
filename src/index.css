@@ -214,11 +214,24 @@
         width: 100%;
         height: 100%;
     }
+    .header {
+        display: none;
+    }
     .markdown-editor {
         width: 100%;
+        height: 100vh;
+        padding: 0;
+    }
+    #editor {
+        height: 100%;
     }
     .markdown-previewer {
         width: 100%;
+        height: 100vh;
+        padding: 0;
+    }
+    #preview {
+        height: 100%;
     }
     .contract,
     .expand {
