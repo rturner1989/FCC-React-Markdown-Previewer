@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/FCC-React-Markdown-Previewer/static/css/main.1e8dab34.chunk.css",
+    "main.css": "/FCC-React-Markdown-Previewer/static/css/main.f824b31d.chunk.css",
     "main.js": "/FCC-React-Markdown-Previewer/static/js/main.37c3f2f1.chunk.js",
     "main.js.map": "/FCC-React-Markdown-Previewer/static/js/main.37c3f2f1.chunk.js.map",
     "runtime-main.js": "/FCC-React-Markdown-Previewer/static/js/runtime-main.d2f54910.js",
@@ -8,14 +8,14 @@
     "static/js/2.6291a333.chunk.js": "/FCC-React-Markdown-Previewer/static/js/2.6291a333.chunk.js",
     "static/js/2.6291a333.chunk.js.map": "/FCC-React-Markdown-Previewer/static/js/2.6291a333.chunk.js.map",
     "index.html": "/FCC-React-Markdown-Previewer/index.html",
-    "static/css/main.1e8dab34.chunk.css.map": "/FCC-React-Markdown-Previewer/static/css/main.1e8dab34.chunk.css.map",
+    "static/css/main.f824b31d.chunk.css.map": "/FCC-React-Markdown-Previewer/static/css/main.f824b31d.chunk.css.map",
     "static/js/2.6291a333.chunk.js.LICENSE.txt": "/FCC-React-Markdown-Previewer/static/js/2.6291a333.chunk.js.LICENSE.txt",
     "static/media/Data.98c01269.md": "/FCC-React-Markdown-Previewer/static/media/Data.98c01269.md"
   },
   "entrypoints": [
     "static/js/runtime-main.d2f54910.js",
     "static/js/2.6291a333.chunk.js",
-    "static/css/main.1e8dab34.chunk.css",
+    "static/css/main.f824b31d.chunk.css",
     "static/js/main.37c3f2f1.chunk.js"
   ]
 }
